@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET    /taskList controllers.TaskListController.findAll
+POST   /taskList controllers.TaskListController.create
+GET  /taskList/:taskListId controllers.TaskListController.findById(taskListId:String)
+PATCH  /taskList/:taskListId controllers.TaskListController.update(taskListId:String)
+DELETE /taskList/:taskListId controllers.TaskListController.delete(taskListId:String)
+
+POST    /taskList/:taskListId/tasks controllers.TaskController.create(taskListId:String)
+DELETE  /taskList/:taskListId/tasks/:taskId controllers.TaskController.delete(taskListId:String, taskId:String)
+
+
+
